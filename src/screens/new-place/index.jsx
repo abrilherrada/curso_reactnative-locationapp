@@ -3,7 +3,7 @@ import { View, Text, ScrollView, TextInput, Button } from "react-native";
 import { useDispatch } from "react-redux";
 
 import { addPlace } from "../../store/place.slice";
-import { ImageSelector } from "../../components";
+import { ImageSelector, LocationSelector } from "../../components";
 import { styles } from "./styles";
 import colors from "../../utils/colors";
 
@@ -23,6 +23,10 @@ const NewPlace = ({ navigation }) => {
     setImage(uri);
   };
 
+  const onLocationSelection = (location) => {
+    console.warn(location);
+  };
+
   return (
     <ScrollView style={styles.container}>
       <View style={styles.content}>
@@ -34,6 +38,7 @@ const NewPlace = ({ navigation }) => {
           value={title}
         />
         <ImageSelector onImageSelection={onImageSelection} />
+        <LocationSelector onLocationSelection={onLocationSelection} />
         <Button
           disabled={title.length === 0}
           title="Guardar"
