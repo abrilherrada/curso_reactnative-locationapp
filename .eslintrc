@@ -1,0 +1,13 @@
+{
+  "settings": {
+    "eol-last": "error"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "spread": true
+    }
+  }
+}
