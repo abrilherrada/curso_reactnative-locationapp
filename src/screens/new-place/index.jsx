@@ -9,17 +9,18 @@ import colors from "../../utils/colors";
 
 const NewPlace = ({ navigation }) => {
   const [title, setTitle] = useState("");
+  const [image, setImage] = useState(null);
   const dispatch = useDispatch();
 
   const onHandleSubmit = () => {
-    dispatch(addPlace({ title }));
+    dispatch(addPlace({ title, image }));
     navigation.goBack();
   };
   const onHandleChange = (text) => {
     setTitle(text);
   };
   const onImageSelection = (uri) => {
-    console.warn(uri);
+    setImage(uri);
   };
 
   return (
