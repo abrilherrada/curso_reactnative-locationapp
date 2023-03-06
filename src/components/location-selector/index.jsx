@@ -2,6 +2,7 @@ import { useState } from "react";
 import { View, Button, Text, Alert } from "react-native";
 import * as Location from "expo-location";
 
+import MapPreview from "../map-preview";
 import colors from "../../utils/colors";
 import { styles } from "./styles";
 
@@ -32,14 +33,15 @@ const LocationSelector = ({ onLocationSelection }) => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.preview}>
-        {!selectedLocation ? (
-          <Text>No hay ninguna ubicación seleccionada.</Text>
-        ) : (
-          <Text>{`Latitud: ${selectedLocation.lat}. Longitud: ${selectedLocation.lng}.`}</Text>
-        )}
-      </View>
-      <Button title="Seleccionar ubicación" color={colors.primary} onPress={onHandleGetLocation} />
+      <MapPreview location={selectedLocation} style={styles.preview}>
+        <Text style={styles.text}>No hay ninguna ubicación seleccionada.</Text>
+      </MapPreview>
+      <Button
+        title="Seleccionar ubicación actual"
+        color={colors.primary}
+        onPress={onHandleGetLocation}
+      />
+      <Button title="Seleccionar desde el mapa" color={colors.tertiary} onPress={() => {}} />
     </View>
   );
 };
