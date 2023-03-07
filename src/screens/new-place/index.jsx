@@ -10,10 +10,11 @@ import colors from "../../utils/colors";
 const NewPlace = ({ navigation }) => {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState(null);
+  const [coords, setCoords] = useState(null);
   const dispatch = useDispatch();
 
   const onHandleSubmit = () => {
-    dispatch(addPlace({ title, image }));
+    dispatch(addPlace({ title, image, coords }));
     navigation.goBack();
   };
   const onHandleChange = (text) => {
@@ -24,7 +25,7 @@ const NewPlace = ({ navigation }) => {
   };
 
   const onLocationSelection = (location) => {
-    console.warn(location);
+    setCoords(location);
   };
 
   return (
