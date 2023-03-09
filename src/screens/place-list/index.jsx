@@ -11,7 +11,7 @@ const PlaceList = ({ navigation }) => {
   const renderItem = ({ item }) => (
     <PlaceItem
       {...item}
-      onSelect={() => navigation.navidate("PlaceDetail", { placeId: item.id })}
+      onSelect={() => navigation.navigate("PlaceDetail", { placeId: item.id })}
     />
   );
 

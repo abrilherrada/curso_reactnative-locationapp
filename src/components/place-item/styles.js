@@ -23,7 +23,12 @@ export const styles = StyleSheet.create({
     },
     title: {
         fontSize: 16,
+        fontWeight: "bold",
         color: colors.text,
-        marginBottom: 10,
+        marginBottom: 5,
+    },
+    address: {
+        fontSize: 14,
+        color: colors.text,
     },
 });
